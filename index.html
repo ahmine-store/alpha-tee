@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AHMINE STORE | Export Quality Apparel</title>
+
+  <!-- MAIN STYLESHEET -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- META FOR RESPONSIVE DESIGN -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- ======================================================
+     TOP NAVIGATION BAR
+     - Logo (round image placeholder)
+     - Brand Name
+     - Social / Contact Links
+====================================================== -->
+<nav>
+  <div class="nav-left">
+    <!-- Replace src with your logo image -->
+    <img src="images/logo.png" alt="AHMINE STORE Logo" class="logo">
+    <h2>AHMINE STORE</h2>
+  </div>
+
+  <div class="social-top">
+    <!-- Replace links with your real accounts -->
+    <a href="https://wa.me/923302540909" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/ahmine_store" target="_blank">Instagram</a>
+    <a href="https://youtube.com/@ahminestore?si=J5LKufAbpVTEVBVO" target="_blank">YouTube</a>
+    <a href="https://tiktok.com/@ahmine_store" target="_blank">TikTok</a>
+    <a href="https://linktr.ee/ahmine_industry" target="_blank">Linktree</a>
+    <a href="mailto:servicesahmine@gmail.com">Email</a>
+  </div>
+</nav>
+
+<!-- ======================================================
+     HERO / BANNER SECTION
+     - Large banner image
+     - 3D / animated effect can be added via CSS
+     - Easy to replace banner image
+====================================================== -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Export Quality Apparel</h1>
+    <p>
+      Manufactured by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
+      From Sialkot to Europe, UK & USA — now in Pakistan.
+    </p>
+    <a href="#products" class="btn">Explore Collection</a>
+  </div>
+
+  <!-- Replace banner image anytime -->
+  <img src="images/Banner-1.png" alt="AHMINE Alpha Tee Banner">
+</section>
+
+<!-- ======================================================
+     PRODUCTS SECTION
+     - Each color is a separate product
+     - Image slider + optional video
+     - Firebase-compatible order forms
+====================================================== -->
+<section id="products" class="products">
+
+  <!-- ================= PRODUCT 1 ================= -->
+  <div class="product-card">
+    <span class="badge">🔥 Premium Drop LAUNCH OFFER
+Slim Alpha Tee
+From Rs. 2900 → Rs. 1690
+Limited Time Only
+</span>
+    <h2>Alpha-Black-Tee</h2>
+
+    <!-- IMAGE SLIDER (add/remove images freely) -->
+    <div class="product-media">
+      <img src="images/Alpha-black.png" class="product-img" alt="">
+      <img src="images/Alpha-black.png" class="product-img" alt="">
+      <!-- Optional product video -->
+      <video src="videos/alpha_black.mp4" autoplay muted loop></video>
+    </div>
+
+    <div class="price-box">
+  <span class="old-price">Rs. 2500</span>
+  <span class="new-price">Rs. 1690</span>
+</div>
+
+
+    <p class="desc">
+      Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br><br>
+      Exporting from Sialkot to Europe, UK & USA.
+      Crafted using <strong>Cotton Jersey 180–210 GSM</strong> with a
+      premium pattern introduced to suit all body shapes,
+      delivering a unique, structured, and stylish appearance.<br><br>
+      ✔ Export Quality<br>
+      ✔ Customized & bulk orders accepted
+      ✔ Be Premium Be Unique 
+    </p>
+
+    <!-- ORDER FORM (DO NOT CHANGE CLASS NAMES) -->
+    <form class="orderForm"
+          data-product="Alpha-Black-Tee"
+          data-price="1690"
+          data-advance="500">
+
+      <input class="name" placeholder="Full Name" required>
+      <input class="phone" placeholder="Phone / WhatsApp Number" required>
+      <input class="email" placeholder="Email Address" required>
+
+      <!-- Size selection -->
+      <select class="size" required>
+        <option value="">Select Size</option>
+        <option>S</option><option>M</option><option>L</option>
+        <option>XL</option>
+      </select>
+
+      <!-- Quantity added (safe for future Firebase updates) -->
+      <input type="number" min="1" value="1" placeholder="Quantity">
+
+      <textarea class="address" placeholder="Delivery Address" required></textarea>
+
+      <button type="submit">Confirm Order</button>
+
+      <div class="stock-msg">
+        <p class="msg"></p>
+      </div>
+    </form>
+  </div>
+
+  <!-- ================= PRODUCT 2 ================= -->
+  <div class="product-card">
+    <span class="badge gold">⭐ Exclusive
+        LAUNCH OFFER
+Slim Alpha Tee
+From Rs. 2500 → Rs. 1690
+Limited Time Only
+
+    </span>
+    <h2>Alpha-Purple-Tee</h2>
+
+    <div class="product-media">
+      <img src="images/Alpha-purple.png" class="product-img" alt="">
+      <img src="images/Alpha-purple.png" class="product-img" alt="">
+      <video src="videos/alpha_purple.mp4" autoplay muted loop></video>
+    </div>
+
+    <div class="price-box">
+  <span class="old-price">Rs. 2500</span>
+  <span class="new-price">Rs. 1690</span>
+</div>
+
+
+    <p class="desc">
+      PMade by <strong>AHMINE INDUSTRY</strong> since 2019.<br><br>
+      Exporting from Sialkot to Europe, UK & USA.
+      Crafted using <strong>Cotton Jersey 180–210 GSM</strong> with a
+      premium pattern introduced to suit all body shapes,
+      delivering a unique, structured, and stylish appearance.<br><br>
+      ✔ Export Quality<br>
+      ✔ Customized & bulk orders accepted
+      ✔ Be Premium Be Unique
+    </p>
+
+    <form class="orderForm"
+          data-product="Alpha-Purple-Tee"
+          data-price="1690"
+          data-advance="500">
+
+      <input class="name" placeholder="Full Name" required>
+      <input class="phone" placeholder="Phone / WhatsApp Number" required>
+      <input class="email" placeholder="Email Address" required>
+
+      <select class="size" required>
+        <option value="">Select Size</option>
+        <option>S</option><option>M</option><option>L</option>
+        <option>XL</option>
+      </select>
+
+      <input type="number" min="1" value="1" placeholder="Quantity">
+
+      <textarea class="address" placeholder="Delivery Address" required></textarea>
+
+      <button type="submit">Confirm Order</button>
+
+      <div class="stock-msg">
+        <p class="msg"></p>
+      </div>
+    </form>
+  </div>
+
+  <!-- ================= FUTURE PRODUCT PLACEHOLDER ================= -->
+  <!-- Duplicate this block to add more products -->
+  <div class="product-card">
+    <span class="badge">🧩 Coming Soon</span>
+    <h2>Next Alpha Edition</h2>
+    <p class="desc">
+      More premium designs launching soon.
+      Stay connected through our social platforms.
+    </p>
+  </div>
+
+</section>
+
+<!-- ======================================================
+     BULK INQUIRIES SECTION
+====================================================== -->
+<section class="about">
+  <h2>Bulk Orders & Wholesale</h2>
+  <p>
+    Minimum bulk order quantity: <strong>40 pieces</strong>.<br>
+    Ideal for brands, teams, resellers, and corporate clients.
+    Contact us directly to discuss pricing, samples, and timelines.
+  </p>
+</section>
+
+<!-- ======================================================
+     CUSTOM MADE ON DEMAND
+====================================================== -->
+<section class="about">
+  <h2>Custom – Made on Demand</h2>
+  <p>
+    We offer full customization services including:
+    embroidery, sublimation, printing, stickers,
+    all types of patches, leather goods, and more.<br><br>
+    Share your vision — we bring it to life with
+    premium craftsmanship.
+    Contact us on Whatsapp and bring your visions into reality...
+  </p>
+</section>
+
+<!-- ======================================================
+     ABOUT US
+====================================================== -->
+<section class="about">
+  <h2>About AHMINE INDUSTRY</h2>
+  <p>
+    AHMINE INDUSTRY is a professional clothing/apparel manufacturer
+    based in Sialkot, Pakistan, operating since 2019.<br><br>
+    ✔ Exporting to Europe, UK & USA<br>
+    ✔ FBR verified & SCCI registered<br>
+    ✔ All types of apparel & customization services<br><br>
+    Explore our portfolio through our accounts.
+  </p>
+</section>
+
+<!-- ======================================================
+     FOOTER / CONTACT
+====================================================== -->
+<footer>
+  <p>
+    © AHMINE INDUSTRY — Export Quality Apparel Since 2019<br>
+    Connect with us on WhatsApp, Instagram, YouTube, TikTok & Linktree
+    given at the Top of the website
+    Best wishes
+  </p>
+</footer>
+
+<!-- ======================================================
+     FIREBASE & MAIN SCRIPT (DO NOT CHANGE ORDER)
+====================================================== -->
+<script type="module" src="firebase.js"></script>
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
