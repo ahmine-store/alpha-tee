@@ -1,65 +1,21 @@
-// =====================================================
-// firebase.js
-// Central Firebase configuration & database exports
-// =====================================================
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Firebase core
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-
-// Firestore database
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-// =====================================================
-// FIREBASE CONFIGURATION
-// (Do NOT share publicly in production apps)
-// =====================================================
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCZX2N-hoZNL8V-xnzBuSOBmqYKITGwmhg",
-  authDomain: "slim-alpha-tee.firebaseapp.com",
-  projectId: "slim-alpha-tee",
-  storageBucket: "slim-alpha-tee.firebasestorage.app",
-  messagingSenderId: "368415138960",
-  appId: "1:368415138960:web:70490781c2f3e9fd556415"
+  apiKey: "AIzaSyAGbe2-9rgN9vQ_OFW_vo7mtj0gh7TZRds",
+  authDomain: "ahmine-store.firebaseapp.com",
+  projectId: "ahmine-store",
+  storageBucket: "ahmine-store.firebasestorage.app",
+  messagingSenderId: "455463891032",
+  appId: "1:455463891032:web:f1c585d34e81c026a99a2d",
+  measurementId: "G-Z9Z710XZEF"
 };
 
-// =====================================================
-// INITIALIZE FIREBASE APP
-// =====================================================
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// =====================================================
-// INITIALIZE FIRESTORE DATABASE
-// =====================================================
-export const db = getFirestore(app);
-
-/*
-=====================================================
-FIRESTORE COLLECTION DESIGN (IMPORTANT)
------------------------------------------------------
-
-Your Firestore will now logically look like this:
-
-📂 orders
-   └── Single product orders (Alpha-Black-Tee, etc)
-
-📂 bulk_orders
-   └── Bulk inquiries (minimum 40 pcs)
-
-📂 custom_orders
-   └── Made-on-demand / customization requests
-
-📂 products (optional future use)
-   └── Product definitions, prices, stock
-
-Each document stores:
-- orderType (single / bulk / custom)
-- productName
-- color (if applicable)
-- quantity
-- customer details
-- timestamp
-
-firebase.js ONLY provides db access.
-Actual data routing happens in script.js.
-=====================================================
-*/
+const analytics = getAnalytics(app);
