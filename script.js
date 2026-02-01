@@ -48,6 +48,7 @@ orderForms.forEach((form) => {
     // Quantity (optional)
     const qtyInput = form.querySelector(".quantity");
     const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+     const totalPrice = price * quantity;
 
     // Message element
     const msgEl = form.querySelector(".msg");
@@ -64,19 +65,21 @@ orderForms.forEach((form) => {
     // -------------------------------------------------
     // PREPARE ORDER DATA FOR FIREBASE
     // -------------------------------------------------
-    const orderData = {
-      product,
-      price,
-      advance,
-      quantity,
-      name,
-      phone,
-      email,
-      size,
-      address,
-      orderType,          // single / bulk / custom
-      createdAt: serverTimestamp()
-    };
+
+const orderData = {
+  product,
+  price,         // unit price
+  totalPrice,    // total for quantity
+  advance,
+  quantity,
+  name,
+  phone,
+  email,
+  size,
+  address,
+  orderType,
+  createdAt: serverTimestamp()
+};
 
     try {
       // -------------------------------------------------
@@ -107,7 +110,8 @@ orderForms.forEach((form) => {
 👕 Product: ${product}
 📐 Size: ${size}
 📦 Quantity: ${quantity}
-💰 Price: Rs. ${price}
+💰 Unit Price: Rs. ${price}
+💰 Total Price: Rs. ${totalPrice}
 💳 Advance: Rs. ${advance}
 
 📍 Address:
@@ -115,8 +119,8 @@ ${address}
 
 📌 Order Type: ${orderType.toUpperCase()}
 
-Please confirm this order.
-Thank you!
+Please confirm this order by sending advance 500Rs on 03302540909 Sadapay account(for Assurity).
+Thank you for understanding!
       `;
 
       const whatsappURL =

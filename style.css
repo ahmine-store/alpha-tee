@@ -3,10 +3,10 @@
    Change colors here to reskin whole website easily
 ===================================================== */
 :root {
-  --bg-dark: #1a1a1a;
-  --bg-card: #2a2a2a;
-  --text-main: #f5f5f5;
-  --text-muted: #b5b5b5;
+  --bg-dark: rgb(36, 36, 36);
+  --bg-card: rgb(36, 36, 36);
+  --text-main: #ffffff;
+  --text-muted: rgb(206, 198, 198);
 
   --yellow: #fdcb00;   /* Premium accent */
   --red: #e63946;      /* Urgency / offers */
