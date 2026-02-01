@@ -24,6 +24,7 @@ const orderForms = document.querySelectorAll(".orderForm");
 // =====================================================
 orderForms.forEach((form) => {
 
+  // Handle form submission
   form.addEventListener("submit", async (e) => {
     e.preventDefault(); // Stop page reload
 
@@ -31,7 +32,7 @@ orderForms.forEach((form) => {
     // READ PRODUCT / FORM META DATA
     // -------------------------------------------------
     const product = form.dataset.product || "N/A";
-    const price = Number(form.dataset.price) || 0;
+    const price = Number(form.dataset.price) || 0;   // unit price
     const advance = Number(form.dataset.advance) || 0;
     const orderType = form.dataset.type || "single"; 
     // single | bulk | custom
@@ -45,12 +46,14 @@ orderForms.forEach((form) => {
     const size = form.querySelector(".size")?.value || "N/A";
     const address = form.querySelector(".address")?.value.trim();
 
-    // Quantity (optional)
+    // Quantity (default = 1)
     const qtyInput = form.querySelector(".quantity");
     const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
-     const totalPrice = price * quantity;
 
-    // Message element
+    // Total price calculation
+    const totalPrice = price * quantity;
+
+    // Message element for user feedback
     const msgEl = form.querySelector(".msg");
 
     // -------------------------------------------------
@@ -65,26 +68,24 @@ orderForms.forEach((form) => {
     // -------------------------------------------------
     // PREPARE ORDER DATA FOR FIREBASE
     // -------------------------------------------------
-
-const orderData = {
-  product,
-  price,         // unit price
-  totalPrice,    // total for quantity
-  advance,
-  quantity,
-  name,
-  phone,
-  email,
-  size,
-  address,
-  orderType,
-  createdAt: serverTimestamp()
-};
+    const orderData = {
+      product,
+      price,         // unit price
+      totalPrice,    // price × quantity
+      advance,
+      quantity,
+      name,
+      phone,
+      email,
+      size,
+      address,
+      orderType,
+      createdAt: serverTimestamp()
+    };
 
     try {
       // -------------------------------------------------
       // SAVE TO FIRESTORE
-      // Collection: orders
       // -------------------------------------------------
       await addDoc(collection(db, "orders"), orderData);
 
@@ -119,20 +120,22 @@ ${address}
 
 📌 Order Type: ${orderType.toUpperCase()}
 
-Please confirm this order by sending advance 500Rs on 03302540909 Sadapay account(for Assurity).
-Thank you for understanding!
+💡 Please note: We request Rs. 500 advance for order assurance. We are a registered & verified company exporting globally. You can check our working and portfolio on our main Instagram account: https://instagram.com/ahmine_store
+
+Thank you for trusting AHMINE STORE!
       `;
 
       const whatsappURL =
         `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-      // Small delay so user sees success message
+      // Open WhatsApp after 1.5s so user sees success message
       setTimeout(() => {
         window.open(whatsappURL, "_blank");
       }, 1500);
 
-      // Reset form
+      // Reset form to default values
       form.reset();
+      if(qtyInput) qtyInput.value = 1; // reset quantity to default 1
 
     } catch (error) {
       // -------------------------------------------------
@@ -156,6 +159,8 @@ Thank you for understanding!
    ✔ Urdu + English WhatsApp text
    ✔ Admin WhatsApp group routing
    ✔ Email notifications (EmailJS)
+   ✔ Real-time total price display on page
+   ✔ Multiple product variations
 
    This setup is production-ready & scalable.
 ===================================================== */
