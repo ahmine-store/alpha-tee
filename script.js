@@ -60,8 +60,10 @@ orderForms.forEach((form) => {
     // BASIC VALIDATION
     // -------------------------------------------------
     if (!name || !phone || !email || !address) {
-      msgEl.style.color = "red";
-      msgEl.textContent = "❌ Please fill all required fields.";
+      if (msgEl) {
+        msgEl.style.color = "red";
+        msgEl.textContent = "❌ Please fill all required fields.";
+      }
       return;
     }
 
@@ -92,9 +94,11 @@ orderForms.forEach((form) => {
       // -------------------------------------------------
       // SUCCESS MESSAGE ON WEBSITE
       // -------------------------------------------------
-      msgEl.style.color = "limegreen";
-      msgEl.textContent =
-        "✅ Your order has been placed successfully! We’ll contact you shortly on WhatsApp.";
+      if (msgEl) {
+        msgEl.style.color = "limegreen";
+        msgEl.textContent =
+          "✅ Your order has been placed successfully! We’ll contact you shortly on WhatsApp.";
+      }
 
       // -------------------------------------------------
       // 📱 WHATSAPP AUTO MESSAGE
@@ -102,28 +106,26 @@ orderForms.forEach((form) => {
       const whatsappNumber = "923302540909"; // AHMINE STORE
 
       const whatsappMessage = `
-🛒 *New Order – AHMINE STORE*
+*Order – AHMINE STORE*
 
-👤 Name: ${name}
-📞 Phone: ${phone}
-📧 Email: ${email}
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
 
-👕 Product: ${product}
-📐 Size: ${size}
+Product: ${product}
+Size: ${size}
 📦 Quantity: ${quantity}
-💰 Unit Price: Rs. ${price}
+Unit Price: Rs. ${price}
 💰 Total Price: Rs. ${totalPrice}
-💳 Advance: Rs. ${advance}
+Advance: Rs. ${advance}
 
 📍 Address:
 ${address}
 
-📌 Order Type: ${orderType.toUpperCase()}
+Order Type: ${orderType.toUpperCase()}
 
-💡 Please note: We request Rs. 500 advance for order assurance. We are a registered & verified company exporting globally. You can check our working and portfolio on our main Instagram account: https://instagram.com/ahmine_store
-
-Thank you for trusting AHMINE STORE!
-      `;
+At SADAPAY account: 03302540909 (Muhammad Ahmed) Send Advance RS.500 to confirm your order, ensuring it is reserved. AHMINE INDUSTRY (Registered & Verified by FBR and SCCI), exporting since 2019. Check out our craftsmanship on IG: @ahmine_manufacturer.
+`;
 
       const whatsappURL =
         `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -135,32 +137,20 @@ Thank you for trusting AHMINE STORE!
 
       // Reset form to default values
       form.reset();
-      if(qtyInput) qtyInput.value = 1; // reset quantity to default 1
+      if (qtyInput) qtyInput.value = 1; // reset quantity to default 1
 
     } catch (error) {
       // -------------------------------------------------
       // ERROR MESSAGE
       // -------------------------------------------------
-      msgEl.style.color = "red";
-      msgEl.textContent =
-        "❌ Error placing order. Please try again.";
+      if (msgEl) {
+        msgEl.style.color = "red";
+        msgEl.textContent =
+          "❌ Error placing order. Please try again.";
+      }
 
       console.error("Firestore Error:", error);
     }
   });
 
 });
-
-/* =====================================================
-   🔮 FUTURE EXTENSIONS (SAFE & EASY)
-   -----------------------------------------------------
-   ✔ Separate WhatsApp numbers for bulk/custom
-   ✔ Auto Order ID
-   ✔ Urdu + English WhatsApp text
-   ✔ Admin WhatsApp group routing
-   ✔ Email notifications (EmailJS)
-   ✔ Real-time total price display on page
-   ✔ Multiple product variations
-
-   This setup is production-ready & scalable.
-===================================================== */
