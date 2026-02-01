@@ -1,12 +1,12 @@
 // =====================================================
 // script.js
-// Handles all order submissions & Firebase interaction
+// Handles all order submissions, Firebase & WhatsApp
 // =====================================================
 
-// Import Firestore database instance
-import { db } from './firebase.js';
+// 🔹 Import Firestore database instance
+import { db } from "./firebase.js";
 
-// Firestore helpers
+// 🔹 Firestore helpers
 import {
   collection,
   addDoc,
@@ -14,89 +14,129 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 // =====================================================
-// SELECT ALL PRODUCT ORDER FORMS
-// NOTE: Class name .orderForm MUST match index.html
+// SELECT ALL ORDER FORMS
+// (Single product, Bulk, Custom – all use .orderForm)
 // =====================================================
 const orderForms = document.querySelectorAll(".orderForm");
 
-// Loop through every product order form
-orderForms.forEach(form => {
+// =====================================================
+// LOOP THROUGH EACH FORM
+// =====================================================
+orderForms.forEach((form) => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault(); // Stop page reload
 
     // -------------------------------------------------
-    // READ STATIC PRODUCT DATA (from HTML attributes)
+    // READ PRODUCT / FORM META DATA
     // -------------------------------------------------
-    const product = form.dataset.product;
-    const price = form.dataset.price;
-    const advance = form.dataset.advance || 0;
+    const product = form.dataset.product || "N/A";
+    const price = Number(form.dataset.price) || 0;
+    const advance = Number(form.dataset.advance) || 0;
+    const orderType = form.dataset.type || "single"; 
+    // single | bulk | custom
 
     // -------------------------------------------------
-    // READ USER INPUT VALUES
+    // READ USER INPUTS
     // -------------------------------------------------
-    const name = form.querySelector(".name").value.trim();
-    const phone = form.querySelector(".phone").value.trim();
-    const email = form.querySelector(".email").value.trim();
-    const size = form.querySelector(".size").value;
-    const address = form.querySelector(".address").value.trim();
+    const name = form.querySelector(".name")?.value.trim();
+    const phone = form.querySelector(".phone")?.value.trim();
+    const email = form.querySelector(".email")?.value.trim();
+    const size = form.querySelector(".size")?.value || "N/A";
+    const address = form.querySelector(".address")?.value.trim();
 
-    // Quantity field is optional in HTML
-    const qtyInput = form.querySelector('input[type="number"]');
+    // Quantity (optional)
+    const qtyInput = form.querySelector(".quantity");
     const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
 
-    // Message display element
+    // Message element
     const msgEl = form.querySelector(".msg");
 
     // -------------------------------------------------
     // BASIC VALIDATION
     // -------------------------------------------------
-    if (!name || !phone || !email || !size || !address) {
+    if (!name || !phone || !email || !address) {
       msgEl.style.color = "red";
       msgEl.textContent = "❌ Please fill all required fields.";
       return;
     }
 
     // -------------------------------------------------
-    // PREPARE ORDER DATA OBJECT
-    // (Easy to extend later)
+    // PREPARE ORDER DATA FOR FIREBASE
     // -------------------------------------------------
     const orderData = {
       product,
-      price: Number(price),
-      advance: Number(advance),
+      price,
+      advance,
       quantity,
       name,
       phone,
       email,
       size,
       address,
-      orderType: "single", // future use: bulk / custom
-      timestamp: serverTimestamp()
+      orderType,          // single / bulk / custom
+      createdAt: serverTimestamp()
     };
 
     try {
       // -------------------------------------------------
-      // SAVE ORDER TO FIRESTORE
-      // Collection name: "orders"
+      // SAVE TO FIRESTORE
+      // Collection: orders
       // -------------------------------------------------
       await addDoc(collection(db, "orders"), orderData);
 
       // -------------------------------------------------
-      // SUCCESS UI FEEDBACK
+      // SUCCESS MESSAGE ON WEBSITE
       // -------------------------------------------------
-      msgEl.style.color = "green";
-      msgEl.textContent = "✅ Order placed successfully! Our team will contact you shortly.";
+      msgEl.style.color = "limegreen";
+      msgEl.textContent =
+        "✅ Your order has been placed successfully! We’ll contact you shortly on WhatsApp.";
 
-      // Reset form after success
+      // -------------------------------------------------
+      // 📱 WHATSAPP AUTO MESSAGE
+      // -------------------------------------------------
+      const whatsappNumber = "923302540909"; // AHMINE STORE
+
+      const whatsappMessage = `
+🛒 *New Order – AHMINE STORE*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📧 Email: ${email}
+
+👕 Product: ${product}
+📐 Size: ${size}
+📦 Quantity: ${quantity}
+💰 Price: Rs. ${price}
+💳 Advance: Rs. ${advance}
+
+📍 Address:
+${address}
+
+📌 Order Type: ${orderType.toUpperCase()}
+
+Please confirm this order.
+Thank you!
+      `;
+
+      const whatsappURL =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+      // Small delay so user sees success message
+      setTimeout(() => {
+        window.open(whatsappURL, "_blank");
+      }, 1500);
+
+      // Reset form
       form.reset();
 
     } catch (error) {
       // -------------------------------------------------
-      // ERROR HANDLING
+      // ERROR MESSAGE
       // -------------------------------------------------
       msgEl.style.color = "red";
-      msgEl.textContent = "❌ Order failed. Please try again.";
+      msgEl.textContent =
+        "❌ Error placing order. Please try again.";
 
       console.error("Firestore Error:", error);
     }
@@ -105,25 +145,13 @@ orderForms.forEach(form => {
 });
 
 /* =====================================================
-   FUTURE EXTENSIONS (READY STRUCTURE)
+   🔮 FUTURE EXTENSIONS (SAFE & EASY)
    -----------------------------------------------------
-   You can safely add:
+   ✔ Separate WhatsApp numbers for bulk/custom
+   ✔ Auto Order ID
+   ✔ Urdu + English WhatsApp text
+   ✔ Admin WhatsApp group routing
+   ✔ Email notifications (EmailJS)
 
-   1️⃣ Bulk Orders
-      - Create form with class .bulkForm
-      - Save to collection: "bulk_orders"
-
-   2️⃣ Custom Made Orders
-      - Create form with class .customForm
-      - Save to collection: "custom_orders"
-
-   3️⃣ WhatsApp Redirect
-      - After addDoc(), redirect user to WhatsApp
-        with pre-filled order message
-
-   4️⃣ Admin Panel
-      - Read data from Firestore
-      - Manage orders, status, delivery
-
-   This structure is intentionally clean & scalable.
+   This setup is production-ready & scalable.
 ===================================================== */

@@ -3,12 +3,12 @@
    Change colors here to reskin whole website easily
 ===================================================== */
 :root {
-  --bg-dark: #0e0e0e;
-  --bg-card: #161616;
+  --bg-dark: #1a1a1a;
+  --bg-card: #2a2a2a;
   --text-main: #f5f5f5;
   --text-muted: #b5b5b5;
 
-  --yellow: #f5c400;   /* Premium accent */
+  --yellow: #fdcb00;   /* Premium accent */
   --red: #e63946;      /* Urgency / offers */
   --green: #2ecc71;    /* Success */
 }
@@ -30,13 +30,13 @@ body {
    NAVIGATION BAR
 ===================================================== */
 nav {
-  background: #111;
+  background: #222;
   padding: 18px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #333;
 }
 
 .nav-left {
@@ -80,7 +80,7 @@ nav h2 {
   justify-content: space-between;
   padding: 90px 60px;
   gap: 50px;
-  background: radial-gradient(circle at top, #1b1b1b, #0b0b0b);
+  background: radial-gradient(circle at top, #111, #000);
   flex-wrap: wrap;
 }
 
@@ -116,15 +116,22 @@ nav h2 {
   box-shadow: 0 10px 25px rgba(245, 196, 0, 0.3);
 }
 
-/* Banner image with subtle 3D hover */
-.hero img {
-  width: 420px;
+/* =====================================================
+   HERO BANNER IMAGE
+===================================================== */
+.hero-banner {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
   border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   transition: transform 0.6s;
 }
 
-.hero img:hover {
+.hero-banner:hover {
   transform: rotateY(-8deg) rotateX(4deg) scale(1.03);
 }
 
@@ -199,25 +206,6 @@ nav h2 {
 
 /* =====================================================
    PRICING & DESCRIPTION
-===================================================== 
-.price {
-  margin: 15px 0;
-}
-
-.sale {
-  font-size: 28px;
-  font-weight: bold;
-  color: var(--yellow);
-}
-
-.desc {
-  color: var(--text-muted);
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-/* =====================================================
-   ORDER FORMS
 ===================================================== */
 .price-box {
   display: flex;
@@ -232,11 +220,20 @@ nav h2 {
 }
 
 .new-price {
-  color: #fff;
+  color: var(--yellow);
   font-size: 1.3rem;
   font-weight: bold;
 }
 
+.desc {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* =====================================================
+   ORDER FORMS
+===================================================== */
 form input,
 form select,
 form textarea {
@@ -263,9 +260,11 @@ form button {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
 form button:hover {
+  transform: translateY(-2px);
   background: #ffd633;
 }
 
@@ -288,7 +287,9 @@ form button:hover {
 /* =====================================================
    INFO SECTIONS (ABOUT / BULK / CUSTOM)
 ===================================================== */
-.about {
+.about,
+.bulk-inquiry,
+.custom-order {
   background: #111;
   margin: 40px 50px;
   padding: 60px;
@@ -296,12 +297,16 @@ form button:hover {
   text-align: center;
 }
 
-.about h2 {
+.about h2,
+.bulk-inquiry h2,
+.custom-order h2 {
   color: var(--yellow);
   margin-bottom: 20px;
 }
 
-.about p {
+.about p,
+.bulk-inquiry p,
+.custom-order p {
   color: var(--text-muted);
   max-width: 900px;
   margin: auto;
@@ -330,8 +335,14 @@ footer {
     justify-content: center;
   }
 
-  .hero img {
-    width: 80%;
+  .hero-banner {
+    max-height: 70vh;
+    width: 90%;
+  }
+
+  .products {
+    gap: 30px;
+    padding: 50px 20px;
   }
 }
 
@@ -349,8 +360,13 @@ footer {
     font-size: 36px;
   }
 
+  .hero-banner {
+    max-height: 55vh;
+    width: 100%;
+  }
+
   .products {
-    padding: 40px 20px;
+    padding: 40px 15px;
   }
 
   .product-card {
@@ -358,8 +374,35 @@ footer {
     max-width: 360px;
   }
 
-  .about {
+  .about,
+  .bulk-inquiry,
+  .custom-order {
     margin: 20px;
     padding: 40px 20px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .hero-banner {
+    max-height: 50vh;
   }
 }

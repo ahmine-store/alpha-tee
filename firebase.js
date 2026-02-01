@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -12,10 +12,10 @@ const firebaseConfig = {
   projectId: "ahmine-store",
   storageBucket: "ahmine-store.firebasestorage.app",
   messagingSenderId: "455463891032",
-  appId: "1:455463891032:web:f1c585d34e81c026a99a2d",
-  measurementId: "G-Z9Z710XZEF"
+  appId: "1:455463891032:web:228fbc595a5e2e5ca99a2d",
+  //measurementId: "G-JQHN1D5H3M"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const db = getFirestore(app);
