@@ -3,292 +3,517 @@
 <head>
   <meta charset="UTF-8">
   <title>AHMINE STORE | Export Quality Apparel</title>
-
-  <!-- MAIN STYLESHEET -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- META FOR RESPONSIVE DESIGN -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<!-- ======================================================
-     TOP NAVIGATION BAR
-     - Logo (round image placeholder)
-     - Brand Name
-     - Social / Contact Links
-====================================================== -->
 <nav>
   <div class="nav-left">
-    <!-- Replace src with your logo image -->
     <img src="images/Ahmine-logo.jfif" alt="AHMINE STORE Logo" class="logo">
     <h2>AHMINE STORE</h2>
   </div>
 
   <div class="social-top">
-  <a href="https://wa.me/923302540909" target="_blank" title="WhatsApp">
-    📱 WhatsApp
-  </a>
-
-  <a href="https://instagram.com/ahmine_store" target="_blank" title="Instagram">
-    📸 Instagram
-  </a>
-
-  <a href="https://youtube.com/@ahminestore?si=J5LKufAbpVTEVBVO" target="_blank" title="YouTube">
-    ▶️ YouTube
-  </a>
-
-  <a href="https://tiktok.com/@ahmine_store" target="_blank" title="TikTok">
-    🎵 TikTok
-  </a>
-
-  <a href="https://linktr.ee/ahmine_industry" target="_blank" title="Linktree">
-    🔗 Linktree
-  </a>
-
-  <a href="mailto:servicesahmine@gmail.com" title="Email">
-    ✉️ Email
-  </a>
-</div>
+    <a href="https://wa.me/923302540909" target="_blank" title="WhatsApp">WhatsApp</a>
+    <a href="https://instagram.com/ahmine_store" target="_blank" title="Instagram">Instagram</a>
+    <a href="https://youtube.com/@ahminestore?si=J5LKufAbpVTEVBVO" target="_blank" title="YouTube">YouTube</a>
+    <a href="https://tiktok.com/@ahmine_store" target="_blank" title="TikTok">TikTok</a>
+    <a href="https://linktr.ee/ahmine_industry" target="_blank" title="Linktree">Linktree</a>
+    <a href="mailto:servicesahmine@gmail.com" title="Email">Email</a>
+  </div>
 </nav>
 
+<section class="caution-alert">
+  <p>
+    ⚠️ <strong>Caution:</strong> Must send WhatsApp message after placing order. Message auto-generates when you confirm order.
+  </p>
+</section>
 
-<!-- ======================================================
-     HERO / BANNER SECTION
-     - Large banner image
-     - 3D / animated effect can be added via CSS
-     - Easy to replace banner image
-====================================================== -->
+<section class="feature-strip">
+  <h2>Alpha Meroon Tee</h2>
+  <span class="premium-mark">👑 Premium Most Demanded</span>
+</section>
+
 <section class="hero">
   <div class="hero-text">
     <h1>Made on Demand</h1>
     <h1>Export Quality Apparel</h1>
     <p>
       Manufactured by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
-      From Sialkot to Europe, UK & USA — now in Pakistan.<br> <br>
-      ✔You can contact us on whatsApp about any type of product that can be delivered to you from Sialkot<br>
-      🎁Eg; Your favourite PSL Team Uniform with Your Name and design, Bat, Football, and others can be possible too...<br>
-      ✨Just Contact for the Export High Quality Products at AHMINE-STORE now 😊 
+      From Sialkot to Europe, UK and USA, now in Pakistan.<br><br>
+      You can contact us on WhatsApp about any type of product delivered from Sialkot.<br>
+      Example: your favorite PSL team uniform with your name and more.<br>
+      Contact for export high quality products at AHMINE STORE now.<br><br>
+      Delivery Charges: Rs -> 290 Per Shirt's order<br>
+      FREE Delivery on 3 Tees Order
     </p>
-    <a href="#products" class="btn">Explore ALPHA-Collection</a>
+    <a href="#products" class="btn">Explore ALPHA Collection</a>
+    <div class="hero-slider" aria-label="Top banner slideshow">
+      <div class="hero-slides">
+        <img src="images/Banner-top.png" alt="AHMINE Alpha Tee Banner 1" class="hero-banner">
+        <img src="images/Banner-cotton.png" alt="AHMINE Alpha Tee Banner 2" class="hero-banner">
+        <img src="images/Banner-Lycra.png" alt="AHMINE Alpha Tee Banner 3" class="hero-banner">
+        <img src="images/Banner-bulk.png" alt="AHMINE Alpha Tee Banner 4" class="hero-banner">
+      </div>
+
+      <button type="button" class="hero-control prev" aria-label="Previous banner">&#10094;</button>
+      <button type="button" class="hero-control next" aria-label="Next banner">&#10095;</button>
+
+      <div class="hero-dots" aria-label="Banner slide controls">
+        <button type="button" class="hero-dot active" data-slide="0" aria-label="Show banner 1"></button>
+        <button type="button" class="hero-dot" data-slide="1" aria-label="Show banner 2"></button>
+        <button type="button" class="hero-dot" data-slide="2" aria-label="Show banner 3"></button>
+        <button type="button" class="hero-dot" data-slide="3" aria-label="Show banner 4"></button>
+      </div>
+    </div>
   </div>
-
-  <!-- Replace banner image anytime -->
-  <img src="images/Banner-1.png" alt="AHMINE Alpha Tee Banner" class="hero-banner">
-
 </section>
 
-<!-- ======================================================
-     PRODUCTS SECTION
-     - Each color is a separate product
-     - Image slider + optional video
-     - Firebase-compatible order forms
-====================================================== -->
 <section id="products" class="products">
+  <div class="product-comparison">
+    <h2>Alpha Meroon Tee <span class="premium-inline">👑 Premium Most Demanded</span></h2>
 
-  <!-- ================= PRODUCT 1 ================= -->
-  <div class="product-card">
-    <span class="badge">🔥 Premium Drop LAUNCH OFFER
-Slim Alpha Tee
-From Rs. 2500 → Rs. 1690
-Limited Time Only
-</span>
-    <h2>Alpha-Black-Tee</h2>
+    <div class="product-row">
+      <div class="product-card glow-card">
+        <span class="badge">Poly Lycra Premium</span>
 
-    <!-- IMAGE SLIDER (add/remove images freely) -->
-    <div class="product-media">
-      <img src="images/Alpha-black.png" class="product-img" alt="">
-      <img src="images/Alpha-black.png" class="product-img" alt="">
-      <!-- Optional product video -->
-      <video src="videos/alpha_black.mp4" autoplay muted loop></video>
-    </div>
+        <div class="product-media">
+          <img src="images/alpha meron upfront.png.JPG" class="product-img" alt="Alpha Meroon Poly Lycra">
+            <img src="images/alpha meron front.png.png" class="product-img" alt="Alpha Meroon Poly Lycra">
+                        <img src="images/size.JPG" class="product-img" alt="Size Chart">
+            <img src="images/alpha meron back.png.JPG" class="product-img" alt="Alpha Meroon Poly Lycra">
+                <img src="images/comparison-body.png" class="product-img" alt="Alpha Meroon Poly Lycra">
+          <video src="images/video lycra.mp4" autoplay muted loop></video>
+        </div>
 
-    <div class="price-box">
-  <span class="old-price">Rs. 2500</span>
-  <span class="new-price">Rs. 1690</span>
-</div>
+        <div class="price-box">
+          <span class="old-price">Rs. 3500</span>
+          <span class="new-price">Rs. 2749</span>
+        </div>
 
+        <p class="desc">
+          Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
+          Exporting from Sialkot to Europe, UK and USA.<br><br>
+          Crafted with Poly Lycra gymwear premium fabric for a shiny, stretchable, smooth, crease-resistant finish.<br>
+          Premium pattern introduced to suit all body shapes and deliver a unique structured look.<br><br>
+          Export Quality<br>
+          Customized and bulk orders accepted<br>
+          Be Premium Be Unique<br><br>
+          Advance Rs. 500 is requested to confirm your order and reserve it.
+        </p>
 
-    <p class="desc">
-      Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
-      Exporting from Sialkot to Europe, UK & USA.<br><br>
-      Crafted using <strong>Cotton Jersey 180–210 GSM Premium Soft Fabric</strong> with a
-      premium pattern introduced to suit all body shapes,
-      delivering a unique, structured, and stylish appearance.<br><br>
-      ✔ Export Quality<br>
-      ✔ Customized & bulk orders accepted
-      ✔ Be Premium Be Unique <br><br>
-      💰Advance Rs. 500 is requested to confirm your order, ensuring it is reserved. AHMINE INDUSTRY (Registered & Verified by FBR and SCCI), 
-      exporting since 2019. Check out our craftsmanship on IG: @ahmine_manufacturer.
-    </p>
+        <div class="shipping-box">
+          Shipping: Rs. 290 per order<br>
+          Free delivery on 3 tees
+        </div>
 
-    <!-- ORDER FORM (DO NOT CHANGE CLASS NAMES) -->
-    <form class="orderForm"
-          data-product="Alpha-Black-Tee"
-          data-price="1690"
-          data-advance="500">
+        <form class="orderForm"
+              data-product="Alpha Meroon Tee - Poly Lycra"
+              data-price="2749"
+              data-advance="500"
+              data-fabric="Poly Lycra">
 
-      <input class="name" placeholder="Full Name" required>
-      <input class="phone" placeholder="Phone / WhatsApp Number" required>
-      <input class="email" placeholder="Email Address" required>
+          <input class="name" placeholder="Full Name" required>
+          <input class="phone" placeholder="Phone / WhatsApp Number" required>
+          <input class="email" placeholder="Email Address" required>
 
-      <!-- Size selection -->
-      <select class="size" required>
-        <option value="">Select Size</option>
-        <option>S</option><option>M</option><option>L</option>
-        <option>XL</option>
-      </select>
+          <select class="size" required>
+            <option value="">Select Size</option>
+            <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+          </select>
 
-      <!-- Quantity added (safe for future Firebase updates) -->
-    <input type="number" min="1" value="1" class="quantity" placeholder="Quantity">
+          <input type="number" min="1" value="1" class="quantity" placeholder="Quantity">
 
-      <textarea class="address" placeholder="Delivery Address" required></textarea>
+          <textarea class="address" placeholder="Delivery Address" required></textarea>
 
-      <button type="submit">Confirm Order</button>
-
-      <div class="stock-msg">
-        <p class="msg"></p>
-
+          <button type="submit">Confirm Order</button>
+          <div class="stock-msg"><p class="msg"></p></div>
+        </form>
       </div>
-    </form>
+
+      <div class="product-card glow-card gold-tone">
+        <span class="badge gold">Cotton Jersey</span>
+
+        <div class="product-media">
+          <img src="images/Cotton meron upfront.png" class="product-img" alt="Alpha Meroon Cotton Jersey">
+           <img src="images/cotton meron front.png" class="product-img" alt="Alpha Meroon Cotton Jersey">
+                      <img src="images/size.jpg" class="product-img" alt="Size Chart">
+            <img src="images/cotton meron back.jpeg" class="product-img" alt="Alpha Meroon Cotton Jersey">
+             <img src="images/comparison-body.png" class="product-img" alt="Alpha Meroon Cotton Jersey">
+          <video src="images/video lycra.mp4" autoplay muted loop></video>
+        </div>
+
+        <div class="price-box">
+          <span class="old-price">Rs. 3000</span>
+          <span class="new-price">Rs. 2199</span>
+        </div>
+
+        <p class="desc">
+          Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
+          Exporting from Sialkot to Europe, UK and USA.<br><br>
+          Crafted using <strong>Cotton Jersey 180-210 GSM Premium Soft Fabric</strong> with a premium pattern that suits all body shapes,
+          delivering a unique, structured, and stylish appearance.<br><br>
+          Export Quality<br>
+          Customized and bulk orders accepted<br>
+          Be Premium Be Unique<br><br>
+          Advance Rs. 500 is requested to confirm your order and reserve it.
+        </p>
+
+        <div class="shipping-box">
+          Shipping: Rs. 290 per order<br>
+          Free delivery on 3 tees
+        </div>
+
+        <form class="orderForm"
+              data-product="Alpha Meroon Tee - Cotton Jersey"
+              data-price="2199"
+              data-advance="500"
+              data-fabric="Cotton Jersey">
+
+          <input class="name" placeholder="Full Name" required>
+          <input class="phone" placeholder="Phone / WhatsApp Number" required>
+          <input class="email" placeholder="Email Address" required>
+
+          <select class="size" required>
+            <option value="">Select Size</option>
+            <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+          </select>
+
+          <input type="number" min="1" value="1" class="quantity" placeholder="Quantity">
+
+          <textarea class="address" placeholder="Delivery Address" required></textarea>
+
+          <button type="submit">Confirm Order</button>
+          <div class="stock-msg"><p class="msg"></p></div>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <!-- ================= PRODUCT 2 ================= -->
-  <div class="product-card">
-    <span class="badge gold">⭐ Exclusive
-        LAUNCH OFFER
-Slim Alpha Tee
-From Rs. 2500 → Rs. 1690
-Limited Time Only
 
-    </span>
-    <h2>Alpha-Purple-Tee</h2>
+  <div class="product-comparison">
+    <h2>Alpha Black Tee</h2>
 
-    <div class="product-media">
-      <img src="images/Alpha-purple.png" class="product-img" alt="">
-      <img src="images/Alpha-purple.png" class="product-img" alt="">
-      <video src="videos/alpha_purple.mp4" autoplay muted loop></video>
-    </div>
+    <div class="product-row">
+      <div class="product-card glow-card">
+        <span class="badge">Poly Lycra Premium</span>
 
-    <div class="price-box">
-  <span class="old-price">Rs. 2500</span>
-  <span class="new-price">Rs. 1690</span>
-</div>
+        <div class="product-media">
+        <img src="images/alpha black upfront.png.png" class="product-img" alt="Alpha Black Poly Lycra">
+        <img src="images/alpha black front.png.png" class="product-img" alt="Alpha Black Poly Lycra">
+                  <img src="images/size.jpg" class="product-img" alt="Size Chart">
+            <img src="images/alpha black back.png.png" class="product-img" alt="Alpha Black Poly Lycra">
+        <img src="images/comparison-body.png" class="product-img" alt="Alpha Black Poly Lycra">
+          <video src="images/video lycra.mp4" autoplay muted loop></video>
+        </div>
 
+        <div class="price-box">
+          <span class="old-price">Rs. 3500</span>
+          <span class="new-price">Rs. 2749</span>
+        </div>
 
-    <p class="desc">
-      Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
-      Exporting from Sialkot to Europe, UK & USA.<br><br>
-      Crafted using <strong>Cotton Jersey 180–210 GSM Premium Soft Fabric</strong> with a
-      premium pattern introduced to suit all body shapes,
-      delivering a unique, structured, and stylish appearance.<br><br>
-      ✔ Export Quality<br>
-      ✔ Customized & bulk orders accepted
-      ✔ Be Premium Be Unique<br><br>
-      💰Advance Rs. 500 is requested to confirm your order, ensuring it is reserved. AHMINE INDUSTRY (Registered & Verified by FBR and SCCI), 
-      exporting since 2019. Check out our craftsmanship on IG: @ahmine_manufacturer.
-    </p>
+        <p class="desc">
+          Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
+          Exporting from Sialkot to Europe, UK and USA.<br><br>
+          Crafted with Poly Lycra gymwear premium fabric for a shiny, stretchable, smooth, crease-resistant finish.<br>
+          Premium pattern introduced to suit all body shapes and deliver a unique structured look.<br><br>
+          Export Quality<br>
+          Customized and bulk orders accepted<br>
+          Be Premium Be Unique<br><br>
+          Advance Rs. 500 is requested to confirm your order and reserve it.
+        </p>
 
-    <form class="orderForm"
-          data-product="Alpha-Purple-Tee"
-          data-price="1690"
-          data-advance="500">
+        <div class="shipping-box">
+          Shipping: Rs. 290 per order<br>
+          Free delivery on 3 tees
+        </div>
 
-      <input class="name" placeholder="Full Name" required>
-      <input class="phone" placeholder="Phone / WhatsApp Number" required>
-      <input class="email" placeholder="Email Address" required>
+        <form class="orderForm"
+              data-product="Alpha Black Tee - Poly Lycra"
+              data-price="2749"
+              data-advance="500"
+              data-fabric="Poly Lycra">
 
-      <select class="size" required>
-        <option value="">Select Size</option>
-        <option>S</option><option>M</option><option>L</option>
-        <option>XL</option>
-      </select>
+          <input class="name" placeholder="Full Name" required>
+          <input class="phone" placeholder="Phone / WhatsApp Number" required>
+          <input class="email" placeholder="Email Address" required>
 
-     <input type="number" class="quantity" min="1" value="1" placeholder="Quantity">
+          <select class="size" required>
+            <option value="">Select Size</option>
+            <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+          </select>
 
+          <input type="number" min="1" value="1" class="quantity" placeholder="Quantity">
 
-      <textarea class="address" placeholder="Delivery Address" required></textarea>
+          <textarea class="address" placeholder="Delivery Address" required></textarea>
 
-      <button type="submit">Confirm Order</button>
-
-      <div class="stock-msg">
-        <p class="msg"></p>
+          <button type="submit">Confirm Order</button>
+          <div class="stock-msg"><p class="msg"></p></div>
+        </form>
       </div>
-    </form>
+
+      <div class="product-card glow-card gold-tone">
+        <span class="badge gold">Cotton Jersey</span>
+
+        <div class="product-media">
+          <img src="images/Cotton black upfront.png" class="product-img" alt="Alpha Black Cotton Jersey">
+         <img src="images/cotton black front.png" class="product-img" alt="Alpha Black Cotton Jersey">
+                    <img src="images/size.jpg" class="product-img" alt="Size Chart">
+            <img src="images/cotton black back.png" class="product-img" alt="Alpha Black Cotton Jersey">
+          <video src="images/video lycra.mp4" autoplay muted loop></video>
+        </div>
+
+        <div class="price-box">
+          <span class="old-price">Rs. 3000</span>
+          <span class="new-price">Rs. 2199</span>
+        </div>
+
+        <p class="desc">
+          Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
+          Exporting from Sialkot to Europe, UK and USA.<br><br>
+          Crafted using <strong>Cotton Jersey 180-210 GSM Premium Soft Fabric</strong> with a premium pattern that suits all body shapes,
+          delivering a unique, structured, and stylish appearance.<br><br>
+          Export Quality<br>
+          Customized and bulk orders accepted<br>
+          Be Premium Be Unique<br><br>
+          Advance Rs. 500 is requested to confirm your order and reserve it.
+        </p>
+
+        <div class="shipping-box">
+          Shipping: Rs. 290 per order<br>
+          Free delivery on 3 tees
+        </div>
+
+        <form class="orderForm"
+              data-product="Alpha Black Tee - Cotton Jersey"
+              data-price="2199"
+              data-advance="500"
+              data-fabric="Cotton Jersey">
+
+          <input class="name" placeholder="Full Name" required>
+          <input class="phone" placeholder="Phone / WhatsApp Number" required>
+          <input class="email" placeholder="Email Address" required>
+
+          <select class="size" required>
+            <option value="">Select Size</option>
+            <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+          </select>
+
+          <input type="number" min="1" value="1" class="quantity" placeholder="Quantity">
+
+          <textarea class="address" placeholder="Delivery Address" required></textarea>
+
+          <button type="submit">Confirm Order</button>
+          <div class="stock-msg"><p class="msg"></p></div>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <!-- ================= FUTURE PRODUCT PLACEHOLDER ================= -->
-  <!-- Duplicate this block to add more products -->
+  <div class="product-comparison">
+    <h2>Alpha White Tee</h2>
+
+    <div class="product-row">
+      <div class="product-card glow-card">
+        <span class="badge">Poly Lycra Premium</span>
+
+        <div class="product-media">
+          <img src="images/alpha white upfront.png.png" class="product-img" alt="Alpha White Poly Lycra">
+           <img src="images/alpha white front.png.png" class="product-img" alt="Alpha White Poly Lycra">
+                      <img src="images/size.jpg" class="product-img" alt="Size Chart">
+            <img src="images/alpha white back.png.png" class="product-img" alt="Alpha White Poly Lycra">
+             <img src="images/comparison-body.png" class="product-img" alt="Alpha White Poly Lycra">
+          <video src="images/video lycra.mp4" autoplay muted loop></video>
+        </div>
+
+        <div class="price-box">
+          <span class="old-price">Rs. 3500</span>
+          <span class="new-price">Rs. 2749</span>
+        </div>
+
+        <p class="desc">
+          Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
+          Exporting from Sialkot to Europe, UK and USA.<br><br>
+          Crafted with Poly Lycra gymwear premium fabric for a shiny, stretchable, smooth, crease-resistant finish.<br>
+          Premium pattern introduced to suit all body shapes and deliver a unique structured look.<br><br>
+          Export Quality<br>
+          Customized and bulk orders accepted<br>
+          Be Premium Be Unique<br><br>
+          Advance Rs. 500 is requested to confirm your order and reserve it.
+        </p>
+
+        <div class="shipping-box">
+          Shipping: Rs. 290 per order<br>
+          Free delivery on 3 tees
+        </div>
+
+        <form class="orderForm"
+              data-product="Alpha White Tee - Poly Lycra"
+              data-price="2749"
+              data-advance="500"
+              data-fabric="Poly Lycra">
+
+          <input class="name" placeholder="Full Name" required>
+          <input class="phone" placeholder="Phone / WhatsApp Number" required>
+          <input class="email" placeholder="Email Address" required>
+
+          <select class="size" required>
+            <option value="">Select Size</option>
+            <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+          </select>
+
+          <input type="number" min="1" value="1" class="quantity" placeholder="Quantity">
+
+          <textarea class="address" placeholder="Delivery Address" required></textarea>
+
+          <button type="submit">Confirm Order</button>
+          <div class="stock-msg"><p class="msg"></p></div>
+        </form>
+      </div>
+
+      <div class="product-card glow-card gold-tone">
+        <span class="badge gold">Cotton Jersey</span>
+
+        <div class="product-media">
+          <img src="images/Cotton white upfront.png" class="product-img" alt="Alpha White Cotton Jersey">
+           <img src="images/cotton white front.png" class="product-img" alt="Alpha White Cotton Jersey">
+                      <img src="images/size.jpg" class="product-img" alt="Size Chart">
+            <img src="images/cotton white back.png" class="product-img" alt="Alpha White Cotton Jersey">
+          <video src="images/video lycra.mp4" autoplay muted loop></video>
+        </div>
+
+        <div class="price-box">
+          <span class="old-price">Rs. 3000</span>
+          <span class="new-price">Rs. 2199</span>
+        </div>
+
+        <p class="desc">
+          Made by <strong>AHMINE INDUSTRY</strong> since 2019.<br>
+          Exporting from Sialkot to Europe, UK and USA.<br><br>
+          Crafted using <strong>Cotton Jersey 180-210 GSM Premium Soft Fabric</strong> with a premium pattern that suits all body shapes,
+          delivering a unique, structured, and stylish appearance.<br><br>
+          Export Quality<br>
+          Customized and bulk orders accepted<br>
+          Be Premium Be Unique<br><br>
+          Advance Rs. 500 is requested to confirm your order and reserve it.
+        </p>
+
+        <div class="shipping-box">
+          Shipping: Rs. 290 per order<br>
+          Free delivery on 3 tees
+        </div>
+
+        <form class="orderForm"
+              data-product="Alpha White Tee - Cotton Jersey"
+              data-price="2199"
+              data-advance="500"
+              data-fabric="Cotton Jersey">
+
+          <input class="name" placeholder="Full Name" required>
+          <input class="phone" placeholder="Phone / WhatsApp Number" required>
+          <input class="email" placeholder="Email Address" required>
+
+          <select class="size" required>
+            <option value="">Select Size</option>
+            <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+          </select>
+
+          <input type="number" min="1" value="1" class="quantity" placeholder="Quantity">
+
+          <textarea class="address" placeholder="Delivery Address" required></textarea>
+
+          <button type="submit">Confirm Order</button>
+          <div class="stock-msg"><p class="msg"></p></div>
+        </form>
+      </div>
+    </div>
+  </div>
   <div class="product-card">
-    <span class="badge">🧩 Coming Soon</span>
+    <span class="badge">Coming Soon</span>
     <h2>Next Alpha Edition</h2>
     <p class="desc">
-      More premium designs launching soon.
+      Community Exclusive💖 More premium designs launching soon.
       Stay connected through our social platforms.
     </p>
   </div>
-
 </section>
 
-<!-- ======================================================
-     BULK INQUIRIES SECTION
-====================================================== -->
+<section class="multi-order-wrap">
+  <h2>Multiple Item Order Box</h2>
+  <p>Select color and size for each item. Final total is calculated automatically.</p>
+
+  <form class="multiOrderForm" data-advance="500">
+    <input class="name" placeholder="Full Name" required>
+    <input class="phone" placeholder="Phone / WhatsApp Number (03XXXXXXXXX)" required>
+    <input class="email" placeholder="Email Address" required>
+    <textarea class="address" placeholder="Delivery Address" required></textarea>
+
+    <div class="multi-items"></div>
+
+    <button type="button" class="add-item-btn">+ Add Another Item</button>
+
+    <div class="totals-box">
+      <p>Subtotal: <strong class="subtotal">Rs 0</strong></p>
+      <p>Shipping: <strong class="shipping">Rs 290</strong></p>
+      <p>Final Total: <strong class="final-total">Rs 290</strong></p>
+    </div>
+
+    <button type="submit">Confirm Multiple Item Order</button>
+    <div class="stock-msg"><p class="msg"></p></div>
+  </form>
+</section>
+
 <section class="about">
-  <h2>Bulk Orders & Wholesale</h2>
+  <h2>Bulk Orders and Wholesale</h2>
   <p>
-    Minimum bulk order quantity: <strong>40 pieces</strong>.<br>
+    Minimum bulk order quantity: <strong>50 pieces (25 one color MOQ)</strong>.<br>
     Ideal for brands, teams, resellers, and corporate clients.
     Contact us directly to discuss pricing, samples, and timelines.
   </p>
 </section>
 
-<!-- ======================================================
-     CUSTOM MADE ON DEMAND
-====================================================== -->
 <section class="about">
-  <h2>Custom – Made on Demand</h2>
+  <h2>Custom - Made on Demand</h2>
   <p>
     We offer full customization services including:
     embroidery, sublimation, printing, stickers,
     all types of patches, leather goods, and more.<br><br>
-    Share your vision — we bring it to life with
+    Share your vision and we bring it to life with
     premium craftsmanship.
-    Contact us on Whatsapp and bring your visions into reality...
+    Contact us on WhatsApp and bring your visions into reality.
   </p>
 </section>
 
-<!-- ======================================================
-     ABOUT US
-====================================================== -->
 <section class="about">
   <h2>About AHMINE INDUSTRY</h2>
   <p>
-    AHMINE INDUSTRY is a professional clothing/apparel manufacturer
+    AHMINE INDUSTRY is a professional clothing and apparel manufacturer
     based in Sialkot, Pakistan, operating since 2019.<br><br>
-    ✔ Exporting to Europe, UK & USA<br>
-    ✔ FBR verified & SCCI registered<br>
-    ✔ All types of apparel & customization services<br><br>
+    Exporting to Europe, UK and USA<br>
+    FBR verified and SCCI registered<br>
+    All types of apparel and customization services<br><br>
     Explore our portfolio through our accounts.
   </p>
 </section>
 
-<!-- ======================================================
-     FOOTER / CONTACT
-====================================================== -->
 <footer>
   <p>
-    © AHMINE INDUSTRY — Since 2019<br>
+    Copyright AHMINE INDUSTRY Since 2019<br>
     Connect with us on WhatsApp<br>
-    brings visions to reality<br>
-    Best wishes
+    Brings visions to reality
   </p>
 </footer>
 
-<!-- ======================================================
-     FIREBASE & MAIN SCRIPT (DO NOT CHANGE ORDER)
-====================================================== -->
 <script type="module" src="firebase.js"></script>
 <script type="module" src="script.js"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
