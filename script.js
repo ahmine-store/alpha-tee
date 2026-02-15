@@ -15,8 +15,8 @@ const DEFAULT_ADVANCE = 500;
 const WHATSAPP_NUMBER = "923302540909";
 
 const PRICES = {
-  "Poly Lycra": 2199,
-  "Cotton Jersey": 1849
+  "Poly Lycra": 2749,
+  "Cotton Jersey": 2199
 };
 
 initHeroSlider(heroSlider);
@@ -379,3 +379,4 @@ function initHeroSlider(slider) {
   showSlide(0);
   startAuto();
 }
+
